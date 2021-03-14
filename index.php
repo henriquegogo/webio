@@ -14,7 +14,7 @@ else {
 }
 
 if (isset($_REQUEST['message'])) {
-    array_unshift($_SESSION['messages'], array(
+    array_push($_SESSION['messages'], array(
         'timestamp' => microtime(true),
         'message' => substr(htmlspecialchars($_REQUEST['message']), 0, 500)
     ));
