@@ -20,6 +20,7 @@ if (isset($_REQUEST['message'])) {
     ));
 }
 else {
+    header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
     header('Content-Type: application/json');
     echo json_encode($_SESSION['messages']);
 }
